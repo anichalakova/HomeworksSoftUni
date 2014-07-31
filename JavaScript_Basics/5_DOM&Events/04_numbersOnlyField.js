@@ -1,5 +1,3 @@
-﻿
-
 function numbersOnly(){
 	var field = document.getElementById('numberField');
 	var inputValue = field.value;
