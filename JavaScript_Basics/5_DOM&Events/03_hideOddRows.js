@@ -15,6 +15,13 @@ hideButton.onclick = function hideOddRows()
 	var step = (firstVisible + 1)*2;	
 	for (var i = firstVisible; i < rows.length; i+= step) {		
 		rows[i].style.display = 'none';		
-	}	
+	}
+	
+	//Previous solution - change lines 6 to 18 with:
+	
+	//for (var i = 0; i < rows.length; i++) {
+	//	rows[i].parentNode.removeChild(rows[i]);		
+	//}	
+}
 }
 
