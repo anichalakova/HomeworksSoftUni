@@ -16,7 +16,7 @@ namespace LaptopShop
         private Battery battery;
 
 
-        public Laptop(string model, decimal price, string manufacturer = null, string processor = null, int ram = 0, string graphicsCard = null, string hdd = null, float screenSize = 0, Battery battery = null)
+        public Laptop(string model, decimal price, string manufacturer = null, string processor = null, int ram = 0, string graphicsCard = null, string hdd = null, float screenSize = 0, Battery bat = null)
         {
             this.Model = model;
             this.Price = price;
@@ -26,7 +26,7 @@ namespace LaptopShop
             this.graphicsCard = graphicsCard;
             this.hdd = hdd;
             this.ScreenSize = screenSize;
-            this.battery = battery;
+            this.battery = bat;
         }
 
         public string Model
