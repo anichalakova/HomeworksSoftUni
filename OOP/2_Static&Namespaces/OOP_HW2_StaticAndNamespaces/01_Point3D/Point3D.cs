@@ -2,7 +2,7 @@
 
 namespace _01_Point3D
 {
-    class Point3D
+    public class Point3D
     {
         private string name = null;
         private float[] coordinates = null;
