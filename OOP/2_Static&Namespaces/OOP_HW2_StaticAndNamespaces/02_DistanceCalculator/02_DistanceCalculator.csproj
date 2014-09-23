@@ -43,9 +43,16 @@
   <ItemGroup>
     <Compile Include="DistanceCalculator.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Test.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\01_Point3D\01_Point3D.csproj">
+      <Project>{b3d8b327-c864-4fa0-a58f-94b44ce9e48b}</Project>
+      <Name>01_Point3D</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

@@ -1,15 +1,11 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace _01_Point3D
 {
-    public class Point3D
+    class Point3D
     {
-        private string name;
-        private float[] coordinates;
+        private string name = null;
+        private float[] coordinates = null;
         public Point3D(string name, float xCoord, float yCoord, float zCoord)
         {
             this.Name = name;

@@ -1,17 +1,16 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace _02_DistanceCalculator
 {
     class DistanceCalculator
     {
-        public static float CalculateDistance()
+        public static float CalculateDistance(_01_Point3D.Point3D firstPoint, _01_Point3D.Point3D secondPoint)
         {
-            Point3D firstPoint = new Point3D("A", 0f, 12.3f, 9f); // Does not work? The type Point3D could not be found...
-            return 3;
+            double distance = 0;
+            distance = Math.Sqrt(Math.Pow(((double)(firstPoint.Coordinates[0] - secondPoint.Coordinates[0])), 2d)
+                + Math.Pow(((double)(firstPoint.Coordinates[1] - secondPoint.Coordinates[1])), 2d)
+                + Math.Pow(((double)(firstPoint.Coordinates[2] - secondPoint.Coordinates[2])), 2d));
+            return (float)distance;
         }
     }
 }
