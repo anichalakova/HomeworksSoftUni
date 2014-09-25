@@ -2,11 +2,11 @@
 
 namespace _01_Point3D
 {
-    public class Point3D
+    public class Point
     {
         private string name = null;
         private float[] coordinates = null;
-        public Point3D(string name, float xCoord, float yCoord, float zCoord)
+        public Point(string name, float xCoord, float yCoord, float zCoord)
         {
             this.Name = name;
             this.Coordinates = new float[3]{xCoord, yCoord, zCoord};
@@ -28,7 +28,7 @@ namespace _01_Point3D
             get {return this.coordinates;}
             set {this.coordinates = value;}
         }
-        public static Point3D StartPoint = new Point3D("Oxyz", 0f, 0f, 0f);        
+        public static Point StartPoint = new Point("Oxyz", 0f, 0f, 0f);        
 
         public override string ToString()
         {
