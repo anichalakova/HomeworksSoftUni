@@ -8,13 +8,16 @@ namespace Persons
         private string name;
         private int age;
         private string email;
+
         public Person(string name, int age, string email)
         {
             this.Name = name;
             this.Age = age;
             this.Email = email;
         }
+
         public Person(string name, int age) : this(name, age, null) { }
+
         public string Name
         {
             get { return this.name; }
@@ -27,6 +30,7 @@ namespace Persons
                 this.name = value;
             }
         }
+
         public int Age
         {
             get { return this.age; }
@@ -39,6 +43,7 @@ namespace Persons
                 this.age = value;
             }
         }
+
         public string Email
         {
             get { return this.email; }
@@ -56,6 +61,7 @@ namespace Persons
                 } 
             }
         }
+
         public override string ToString()
         {
             string result = "Person: " + this.Name + "\nAge: " + this.age;

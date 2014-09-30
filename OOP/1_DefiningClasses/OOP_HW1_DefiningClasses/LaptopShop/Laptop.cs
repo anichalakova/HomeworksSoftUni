@@ -66,6 +66,7 @@ namespace LaptopShop
                 this.ram = value;
             }
         }
+
         public float ScreenSize
         {
             get { return this.screenSize; }

@@ -12,6 +12,7 @@ namespace LaptopShop
             this.BatType = batteryType;
             this.BatLife = batteryLife;
         }
+
         public string BatType
         {
             get
@@ -27,6 +28,7 @@ namespace LaptopShop
                 this.batteryType = value;
             }
         }
+
         public float BatLife
         {
             get
