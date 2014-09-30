@@ -1,6 +1,5 @@
 ﻿using System;
 
-
 namespace LaptopShop
 {
     public class Battery
