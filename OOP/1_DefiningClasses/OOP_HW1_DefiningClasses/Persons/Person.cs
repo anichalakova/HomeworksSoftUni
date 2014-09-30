@@ -10,7 +10,7 @@ namespace Persons
         private string email;
         public Person(string name, int age, string email)
         {
-            this.name = name;
+            this.Name = name;
             this.Age = age;
             this.Email = email;
         }
