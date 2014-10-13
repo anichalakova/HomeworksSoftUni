@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Text;
+using Problem1_StringBuilderExtensions;
 
 namespace Problem3_ClassStudent
 {
@@ -19,9 +21,9 @@ namespace Problem3_ClassStudent
         {
             List<Student> studentsList = new List<Student>();            
             
-            studentsList.Add(new Student("Filipa", "Xavier", 32, 12559, "0895752140", "ani.chalakova@gmail.com", new List<int> { 5, 6, 5, 5, 4 }, 2));
-            studentsList.Add(new Student("Filipa", "Cholcheva", 109, 12557, "0895752123", "penka.cholch@gmail.com", new List<int> { 3, 4, 5, 6, 2}, 1));
-            studentsList.Add(new Student("Chayka", "Belejkova", 22, 12409, "0895752198", "chayka.belejkova@abv.bg", new List<int> { 3, 2, 3, 2, 3}, 2));
+            studentsList.Add(new Student("Filipa", "Xavier", 32, 125590, "0895752140", "ani.chalakova@gmail.com", new List<int> { 5, 6, 5, 5, 4 }, 2));
+            studentsList.Add(new Student("Filipa", "Cholcheva", 109, 125014, "0895752123", "penka.cholch@gmail.com", new List<int> { 3, 4, 5, 6, 2}, 1));
+            studentsList.Add(new Student("Chayka", "Belejkova", 22, 124014, "0895752198", "chayka.belejkova@abv.bg", new List<int> { 3, 2, 3, 2, 3}, 2));
 
             // Problem 4 - print students in given group, order by first name.
 
@@ -106,6 +108,20 @@ namespace Problem3_ClassStudent
             {
                 Console.WriteLine(item);
             }
+
+            // Problem 12 - extract and print the marks of the students enrolled in 2014 (their faculty number's 5th and 6th digits are 14). 
+
+            var subset12 =
+                from student in studentsList
+                where student.FacultyNumber.ToString().Substring(4, 2).Equals("14")
+                select student;
+
+            Console.WriteLine("\r\nEnrolled in 2014's marks: ");
+
+            foreach (var item in subset12)
+            {
+                Console.WriteLine(string.Join(", ", item.Marks));
+            }            
         }
     }
 }

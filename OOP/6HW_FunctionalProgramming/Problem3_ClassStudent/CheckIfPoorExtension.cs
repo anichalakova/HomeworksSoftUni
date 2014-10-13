@@ -11,8 +11,8 @@ namespace Problem3_ClassStudent
         public static bool CheckIfPoor(this Student student, int numberOfPoorGrades)
         {
             int count = 0;
-            List<int> grades = new List<int>();
-            grades = student.Marks;
+            List<int> grades = new List<int>(student.Marks);
+            //grades.AddRange(student.Marks);
 
             while (grades.Contains(2))
             {
