@@ -33,7 +33,7 @@ var Shape = (function(){
         };
     }
 
-    Shape.prototype.draw = function(){
+    Shape.prototype.initializeCanvas = function(){
         var _ctx = document.getElementById('shapesCanvas').getContext('2d'); 
         _ctx.beginPath();
         _ctx.fillStyle = this._color;
@@ -63,7 +63,7 @@ var Circle = (function(){
     };
 
      Circle.prototype.draw = function () {      
-        var _ctx =  Shape.prototype.draw.call(this);     
+        var _ctx =  Shape.prototype.initializeCanvas.call(this);     
         _ctx.arc(this._x, this._y, this._radius, 0, 2 * Math.PI, false);    
         _ctx.fill();
         _ctx.stroke(); 
@@ -89,7 +89,7 @@ var Rectangle = (function(){
     };
 
      Rectangle.prototype.draw = function () {      
-        var _ctx =  Shape.prototype.draw.call(this);     
+        var _ctx =  Shape.prototype.initializeCanvas.call(this);     
         _ctx.rect(this._x, this._y, this._width, this._height);      
         _ctx.fill();     
         _ctx.stroke();
@@ -113,7 +113,7 @@ var Point = (function(){
     };
 
      Point.prototype.draw = function () {      
-        var _ctx =  Shape.prototype.draw.call(this);     
+        var _ctx =  Shape.prototype.initializeCanvas.call(this);     
         _ctx.rect(this._x, this._y, 2, 2);            
         _ctx.stroke();
         _ctx.closePath();
@@ -140,7 +140,7 @@ var Triangle = (function(){
     };
 
     Triangle.prototype.draw = function () {      
-        var _ctx =  Shape.prototype.draw.call(this);      
+        var _ctx =  Shape.prototype.initializeCanvas.call(this);      
         _ctx.moveTo(this._x,this._y);
         _ctx.lineTo(this._x2,this._y2);      
         _ctx.lineTo(this._x3,this._y3);  
@@ -169,7 +169,7 @@ var Segment = (function(){
     };
 
     Segment.prototype.draw = function () {      
-        var _ctx =  Shape.prototype.draw.call(this);     
+        var _ctx =  Shape.prototype.initializeCanvas.call(this);     
         _ctx.moveTo(this._x,this._y);
         _ctx.lineTo(this._x2,this._y2); 
         _ctx.fill();
