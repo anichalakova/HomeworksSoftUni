@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Draw Shapes</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script src="Shapes.js"></script>
+        
+        <link type = text/css rel ="stylesheet" href = "styles.css"/>        
+    </head>
+    <body>
+        <div id="container">
+            <header><h1>Canvas Geometry API</h1></header>         
+            <form method="post">
+                <div style="white-space:nowrap">
+                    <label for = "x">X: </label> 
+                    <input name = "x" type = "text" placeholder = "0" value = '0' id="x"/>
+                    <label for = "y">Y: </label> 
+                    <input name = "y" type = "text" placeholder = "0" value = '0' id="y"/>
+                </div>
+                <div style="white-space:nowrap">
+                    <label for = "color">Color: </label> 
+                    <input name = "color" type ="color" id="color"/>
+                    <label for = "shape">Shape: </label> 
+
+                    <select name = "shape" required = "required" id="shape"
+                            onchange = "insertNewPropertiesFields(this)">                
+                        <option disabled = "disabled" selected = "selected">Choose shape:</option>
+                        <option value = "circle">Circle</option>
+                        <option value = "rectangle">Rectangle</option>
+                        <option value = "triangle">Triangle</option>
+                        <option value = "segment">Segment</option>
+                        <option value = "point">Point</option>                    
+                    </select>
+                </div>
+                <div style="white-space:nowrap" id="moreFields"></div>                
+                 <textarea rows="4" cols="50" name = "info" id="info"></textarea> 
+                 <input name= "add" type="submit" value ="Add" onclick="drawNextShape(this); return false;"/>            
+            </form>
+            <canvas id="shapesCanvas" width="720" height="600"></canvas>  
+            <script src = "drawShapes.js"></script>
+        </div>
+    </body>
+</html>

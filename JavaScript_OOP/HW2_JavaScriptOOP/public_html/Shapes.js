@@ -29,7 +29,7 @@ var Shape = (function(){
         this._color = color;
 
         Shape.prototype.toString = function(){
-            return 'X = ' + this._x + ', Y = ' + this._y + ', Color = ' + this._color;        
+            return 'X: ' + this._x + ', Y: ' + this._y + ', Color: ' + this._color;        
         };
     }
 
@@ -37,7 +37,7 @@ var Shape = (function(){
         var _ctx = document.getElementById('shapesCanvas').getContext('2d'); 
         _ctx.beginPath();
         _ctx.fillStyle = this._color;
-        _ctx.lineWidth = 2;
+        _ctx.lineWidth = 1;
         _ctx.strokeStyle = 'black';
         return _ctx;
     };
@@ -45,8 +45,8 @@ var Shape = (function(){
 })();
 
 var Circle = (function(){    
-    function Circle (x, y, color, radius){
-        Shape.apply(this, arguments);
+    function Circle (x, y, radius, color){
+        Shape.call(this, x, y, color);
     //    Don't forget mentioning the arguments!  or
     //    Shape.call(this, x, y, color);
         this._radius = radius;
@@ -59,7 +59,7 @@ var Circle = (function(){
 
     //    All extension methods should be declared after the "Child.extends(Parent)" statement:
     Circle.prototype.toString = function(){
-        return Shape.prototype.toString.call(this) + ", R = " + this._radius;            
+        return "Circle - " + Shape.prototype.toString.call(this) + ", R: " + this._radius;            
     };
 
      Circle.prototype.draw = function () {      
@@ -74,8 +74,8 @@ var Circle = (function(){
 })();
 
 var Rectangle = (function(){    
-    function Rectangle(x, y, color, width, height){
-        Shape.apply(this, arguments);
+    function Rectangle(x, y, width, height, color){
+        Shape.call(this, x, y, color);
 
         this._width = width;
         this._height = height;
@@ -84,8 +84,8 @@ var Rectangle = (function(){
     Rectangle.extends(Shape);
 
     Rectangle.prototype.toString = function(){
-        return Shape.prototype.toString.call(this) + ', Width = ' + this._width 
-                + ', Height = ' + this._height;
+        return 'Rectangle - ' + Shape.prototype.toString.call(this) + ', Width: ' + this._width 
+                + ', Height: ' + this._height;
     };
 
      Rectangle.prototype.draw = function () {      
@@ -100,22 +100,20 @@ var Rectangle = (function(){
 })();
 
 var Point = (function(){
-    function Point(x, y){
-        Shape.call(this, x, y);
-        var BLACK = '#000000';
-        this._color = BLACK;
+    function Point(x, y, color){
+        Shape.apply(this, arguments);        
     }
 
     Point.extends(Shape);
 
     Point.prototype.toString = function(){
-        return Shape.prototype.toString.call(this);
+        return 'Point - ' + Shape.prototype.toString.call(this);
     };
 
      Point.prototype.draw = function () {      
         var _ctx =  Shape.prototype.initializeCanvas.call(this);     
-        _ctx.rect(this._x, this._y, 2, 2);            
-        _ctx.stroke();
+        _ctx.rect(this._x, this._y, 5, 5);            
+        _ctx.fill();            
         _ctx.closePath();
     };
     return Point;
@@ -134,9 +132,9 @@ var Triangle = (function(){
     Triangle.extends(Shape);
 
     Triangle.prototype.toString = function(){
-        return Shape.prototype.toString.call(this) 
-                        + ', Second point: x2 = ' + this._x2 + ', y2 = ' + this._y2 
-                        + ', Third point: x3 = ' + this._x3 + ', y3 = ' + this._y3;
+        return 'Triangle - ' + Shape.prototype.toString.call(this) 
+                        + ', X2: ' + this._x2 + ', Y2: ' + this._y2 
+                        + ', X3 = ' + this._x3 + ', Y3: ' + this._y3;
     };
 
     Triangle.prototype.draw = function () {      
@@ -164,8 +162,8 @@ var Segment = (function(){
     Segment.extends(Shape);
 
     Segment.prototype.toString = function(){
-        return Shape.prototype.toString.call(this) 
-                    + ', Second point: x2 = ' + this._x2 + ', y2 = ' + this._y2;
+        return 'Segment - ' + Shape.prototype.toString.call(this) 
+                    + ', X2: ' + this._x2 + ', Y2: ' + this._y2;
     };
 
     Segment.prototype.draw = function () {      
