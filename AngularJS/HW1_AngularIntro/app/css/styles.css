@@ -1,0 +1,54 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Tahoma;
+}
+
+.input {
+    margin: 10px;
+    display: inline-block;
+}
+
+.container {
+    margin: 50px auto;
+    width: 500px;
+    background-color: lightgray;
+    padding: 20px 40px;
+    vertical-align: top;
+}
+
+.fixedWidth{
+    display:block;
+    margin-top: 20px;
+    width: 1000px;    
+}
+
+.small{
+    display:inline-block;
+    float: right;
+    margin-left: 50px; 
+    width: 200px;    
+}
+
+.tigerList{
+    display: inline-block;
+    vertical-align: top;
+    
+    
+}
+.tigerList h2{
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+.tigerList h4{
+    font-weight: bold;
+    display:inline-block;
+    margin-right: 10px;
+}
+
+.tigerList li{
+   list-style: none; 
+   margin-bottom: 10px;
+}

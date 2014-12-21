@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Tiger</title>
+    <link rel="stylesheet" type="text/css" href="css/styles.css">
+</head>
+<body ng-app="tiger" ng-controller="TigerController">
+    <script src="lib/angular/angular.js"></script>
+    <script src="js/app.js"></script>    
+    <script src="js/controllers/tiger.js"></script>
+    
+    
+    <div ng-class="container">
+        <ul ng-class="tigerProperties">
+            <li><h2>TIGER</h2></li>
+            <li><h4>Name:</h4>{{tiger.Name}}</li>
+            <li><h4>Born:</h4>{{tiger.Born}}</li>
+            <li><h4>Birth Date:</h4>{{tiger.BirthDate}}</li>
+            <li><h4>Lives in:</h4>{{tiger.Live}}</li>
+        </ul>
+        <img ng-src="{{imgURL}}" ng-class="small">
+    </div>
+</body>

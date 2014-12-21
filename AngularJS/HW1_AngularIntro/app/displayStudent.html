@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Display Student</title>    
+</head>
+<body ng-app="displayStudent" ng-controller="DisplayStudentController">
+    <script src="lib/angular/angular.js"></script>
+    <script src="js/app.js"></script>
+    <script src="js/controllers/displayStudent.js"></script>
+
+    <img ng-src="{{student.photo}}">
+    <h1> Name: {{student.name}} </h1>
+    <p>Grade: {{student.grade}}</p>
+    <p>School: {{student.school}}</p>
+    <p>Teacher: {{student.teacher}}</p>
+</body>
+</html>
