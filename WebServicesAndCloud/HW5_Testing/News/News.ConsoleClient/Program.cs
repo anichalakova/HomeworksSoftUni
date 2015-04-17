@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Linq;
 using News.Data;
+using System.Configuration;
 
 namespace News.ConsoleClient
 {

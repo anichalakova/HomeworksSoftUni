@@ -15,9 +15,9 @@
             // Arrange -> prepare the objects
             var news = new News.Data.NewsItem()
             {
-                Title = "Sample News 1",
+                Title = "Test News 1",
                 PublishDate = DateTime.Now,
-                Content = "Sample news 1 content"
+                Content = "Test news 1 content"
             };
 
             var dbContext = new NewsDbContext();
